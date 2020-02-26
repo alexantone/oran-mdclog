@@ -70,7 +70,7 @@ then
         TESTOPT=--nocheck
     fi
     rpmbuild --nodeps $TESTOPT -bb rpm/mdclog.spec --define="_sourcedir $PWD" --define="_builddir $PWD" --define="_rpmdir .."
-    cp ../x86_64/*.rpm "$TARGET_DIR"
+    cp ../*.rpm "$TARGET_DIR"
 fi
 
 if [ $BUILD_DEB -ne 0 ]
@@ -80,7 +80,7 @@ then
         export DEB_BUILD_OPTIONS="nocheck noddebs"
     fi
     debuild -b -us -uc
-    cp ../x86_64/*.rpm "$TARGET_DIR"
+    cp ../*.deb "$TARGET_DIR"
 fi
 
 
